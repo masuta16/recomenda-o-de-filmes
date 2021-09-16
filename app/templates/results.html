@@ -1,0 +1,53 @@
+<!-- about.html-->
+
+{% extends "base.html" %}
+{% block title %}Resultados{% endblock %}
+{% block body %}
+<div class="jumbotron">
+  <h1>Resultados</h1>
+
+    Abaixo escontram-se os 10 filmes mais recomendados, de acordo
+    com um critério de similaridade do perfil do usuário. A partir das notas de
+    um usuário aos filmes, agrupam-se os usuários que deram notas similares às dele e
+    assim é feita uma seleção dos filmes que tiveram melhores notas por esses
+    usuários e que o user em questão ainda não viu.
+
+    <h4> Filmes </h4>
+
+      <table class="table table-striped">
+        <thead>
+            <tr>
+              <b>Nome do Filme</b>
+            </tr>
+        </thead>
+        <tbody>
+            {% for movie in movies %}
+            <tr>
+                <td>{{movie[1]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+  <h4> Vizinhos </h4>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+            {% for col in colnames %}
+            <th>{{col}}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for neighbor in neighbors %}
+        <tr>
+            {% for col in colnames %}
+            <td>{{ neighbor[col] }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

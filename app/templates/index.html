@@ -1,0 +1,28 @@
+<!-- index.html-->
+
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+<div class="jumbotron">
+  <h1>RecSys</h1>
+  <p class="lead">Sistema de recomendação de filmes</p>
+
+    Olá! Esta demo é uma apresentação do sistema de recomendação de filmes que
+     utiliza a biblioteca SurpriseLib e os dados do MovieLens.
+
+    Para testá-lo, por favor digite um número entre 1 e 943, correspondente ao
+    identificador do usuário.
+
+  <form method="POST">
+
+    <input type="text"
+    class="form-control"
+    placeholder="UserId"
+    style="width:30%;"
+    name=text>
+
+    <button type="submit" class="btn btn-primary">OK</button>
+
+  </form>
+</div>
+{% endblock %}
