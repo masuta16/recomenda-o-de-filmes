@@ -13,4 +13,4 @@ export FLASK_APP=run.py
 flask run
 ```
 
-E voilà, a aplicação estará disponível :top: :smile:
+Pronto aplicação disponivel
